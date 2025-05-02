@@ -1,4 +1,4 @@
-package com.yalmung.mini.commerce.model;
+package com.yalmung.mini.commerce.product.model;
 
 import com.yalmung.mini.commerce.common.codeconst.YN;
 import jakarta.persistence.*;
@@ -39,6 +39,7 @@ public class Product {
 
 
     public Product() {
+        this.exposeYn = YN.Y;
         this.delYn = YN.N;
     }
 }

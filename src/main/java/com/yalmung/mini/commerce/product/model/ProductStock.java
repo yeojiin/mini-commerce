@@ -1,11 +1,13 @@
-package com.yalmung.mini.commerce.model;
+package com.yalmung.mini.commerce.product.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Entity(name = "ProductStock")
 @Table(name = "product_stock")
+@Getter
 public class ProductStock {
 
     @Id
@@ -17,5 +19,5 @@ public class ProductStock {
     private Product product;
 
     @Column(name="stock_cnt")
-    private Integer sotckCnt;
+    private Integer stockCnt;
 }
