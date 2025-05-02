@@ -12,7 +12,7 @@ create table product (
                          product_no int auto_increment comment '상품 SEQ' primary key ,
                          code varchar(100) not null comment '상품 코드',
                          name varchar(200) not null comment '상품 명',
-                         price long not null comment '상품 가격',
+                         price BIGINT not null comment '상품 가격',
                          expose_yn varchar(2) not null default 'Y' comment '노출 여부',
                          del_yn varchar(2) not null default 'N' comment '삭제 여부'
 ) comment '상품'

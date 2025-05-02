@@ -38,4 +38,21 @@
 
 </details>
 
+<details>
+<summary> 3. 재고 분리 </summary>
+
+- Product와 ProductStock을 분리하는 게 맞을까?
+  - Product 안에 stock 컬럼을 추가한다면 엔티티 구성에는 용이
+  - Product와 ProductStock를 분리하게 된다면?
+    - PK를 구성하는 문제 발생
+    - Product 어그리게이트 안에 stock이 함께 움직임
+  - 하지만 재고는 수정 빈도가 Product 정보와 다른 범위이거나 빈도가 높을 수 있음
+    - 선착순 주문 시
+    - 하지만 대량 주문이 몰리는 시기에 Product의 기본 정보가 변경될 확률도 적음
+  - 락 충돌 방지/확장성 측면
+    - 테이블을 나누면 row-level 락 범위가 줄어서 효율적
+    - 향후 Redis를 이용한 재고 캐시 & 락 구현 시 깔끔한 구조로 구현 가능
+ 
+</details>
+
 
