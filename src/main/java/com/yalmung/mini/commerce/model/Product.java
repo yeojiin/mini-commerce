@@ -32,6 +32,9 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private YN delYn;
 
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
+    private ProductStock productStock;
+
 
 
 
