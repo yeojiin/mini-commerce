@@ -29,6 +29,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'com.mysql:mysql-connector-j'
 
+    // guava
+    implementation("com.google.guava:guava:11.0.2")
+
     // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -45,6 +48,7 @@ dependencies {
     // Tests
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'io.rest-assured:rest-assured:5.3.2'
 
     // Junit test
     testImplementation 'org.assertj:assertj-core:3.19.0'
