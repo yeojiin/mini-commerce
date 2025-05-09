@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ProductStock {
 
     @Id
-    private Long productNo;
+    private Integer productNo;
 
     @MapsId("productNo")     // 식별자 클래스의 ID와 매핑
     @OneToOne(fetch = FetchType.LAZY)

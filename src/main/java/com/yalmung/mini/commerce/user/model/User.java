@@ -13,7 +13,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="user_no")
-    private Long userNo;
+    private Integer userNo;
 
     @Column(name="id")
     private String id;
@@ -27,5 +27,15 @@ public class User {
 
     public User() {
         this.delYn = YN.N;
+    }
+
+    public User(String id, String name) {
+        this.id = id;
+        this.name = name;
+        this.delYn = YN.N;
+    }
+
+    public static User of(String id, String name) {
+        return new User(id, name);
     }
 }

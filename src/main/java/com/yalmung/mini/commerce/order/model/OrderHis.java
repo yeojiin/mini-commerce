@@ -17,7 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 public class OrderHis extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderNo;
+    @Column(name="order_no")
+    private Integer orderNo;
 
     @NotNull
     @ManyToOne(targetEntity = Product.class, optional = false)
