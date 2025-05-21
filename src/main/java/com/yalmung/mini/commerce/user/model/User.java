@@ -35,7 +35,18 @@ public class User {
         this.delYn = YN.N;
     }
 
+    public User(int no, String id, String name, String delYn) {
+        this.userNo = no;
+        this.id = id;
+        this.name = name;
+        this.delYn = YN.valueOf(delYn);
+    }
+
     public static User of(String id, String name) {
         return new User(id, name);
+    }
+
+    public static User of(int no, String id, String name, String delYn) {
+        return new User(no, id, name, delYn);
     }
 }
