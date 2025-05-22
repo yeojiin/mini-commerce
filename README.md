@@ -55,4 +55,36 @@
  
 </details>
 
+---
 
+### 추가 고민
+
+**1. Predicate**
+
+```java
+@Override
+public Predicate<User> chekUser(String field, String value, String operator) {
+  return user -> {
+    // user는 Predicate<User>.test(user)의 매개변수
+    return user.getId().equals("temp");
+  };
+}
+```
+
+- 파라미터로 User을 받지 않아도 `람다 익명 함수로` user를 사용할 수 있음
+- Predicate<T>의 boolean test(T t);를 checkUser()로 구현된 것
+
+```java
+@Override
+public Predicate<User> chekUser(String field, String value, String operator) {
+  return new Predicate<User>() {
+    @Override
+    public boolean test(User user) {
+      return user.getId().equals("temp");
+    }
+  };
+}
+```
+> - 람다는 Predicate<User>의 test(T t) 메서드를 구현하는 익명클래스의 인스턴스를 반환한다.
+> - checkUser()가 람다식을 통해 반환한 객체가 `Predicate<User>`의 구현체이다.
+> - 즉, checkUser()는 람다식을 리턴하므로, Predicate<User> 구현체를 리턴하는 메서드이다.

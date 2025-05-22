@@ -22,7 +22,7 @@ public class UserService implements UserCondition {
     @Override
     public Predicate<User> chekUser(String field, String value, String operator) {
         // Predicate<T> 는 User을 파라미터로 받는 함수형 인터페이스
-        return user -> {
+        return user -> {    // user는 Predicate<User>.test(user)의 매개변수
             try {
                 Field userField = User.class.getDeclaredField(field);
                 userField.setAccessible(true);      // private 필드 접근 가능하도록 설정
